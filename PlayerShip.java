@@ -10,8 +10,8 @@ public class PlayerShip
     private int mid;
     private int x; //the player's x coordinate
     private int y; //the player's y coordinate
-    private int l; //the player sprite's length
-    private int h; //the player sprite's height
+    private final int l = 96; //the player sprite's length
+    private final int h = 108; //the player sprite's height
     public PlayerShip(int windowLength)
     {
         mid = (windowLength - l)/2;
