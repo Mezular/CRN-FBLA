@@ -8,6 +8,7 @@ The class representing the player ship
 public class PlayerShip
 {
     private int mid;
+    private int hp;
     private int x; //the player's x coordinate
     private int y; //the player's y coordinate
     private final int l = 96; //the player sprite's length
