@@ -15,6 +15,8 @@ public class GameApp
 {
 	public static void main(String[] args)
 	{
+		Sound danksound = new Sound("dankmusic.wav");
+		danksound.loop();
 		JFrame gameWindow = new JFrame(); //create the game window
 		GamePanel panel = new GamePanel(); //create the game panel
 		gameWindow.setSize(1024, 576);
