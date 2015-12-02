@@ -6,7 +6,6 @@ public class Sound {
 	
 	private Clip clip;
 	
-	// Change file name to match yours, of course
 	public static Sound sound1 = new Sound("/dankmusic.wav");
 	public static Sound sound2 = new Sound("/dankmusic.wav");
 	public static Sound sound3 = new Sound("/dankmusic.wav");
