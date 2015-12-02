@@ -9,9 +9,9 @@ import javax.swing.JPanel;
 import java.awt.Graphics2D;
 import java.awt.Graphics;
 import java.awt.Color;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.Timer;
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class GamePanel extends JPanel
 {
     private PlayerShip player;
@@ -19,17 +19,17 @@ public class GamePanel extends JPanel
     {
         player = new PlayerShip(1024);
         setBackground(Color.black);
-        ActionListener timerListener = new ActionListener()
-        {
-            public void actionPerformed(ActionEvent evt)
-            {
-                player.setX(player.getX());
-                player.setY(player.getY() + 1);
-                repaint();
-            }
-        };
-        Timer gameRefresh = new Timer(10, timerListener);
-        gameRefresh.start();
+		Timer graphicsTimer = new Timer();
+		TimerTask repaint = new TimerTask()
+		{
+			@Override
+			public void run()
+			{
+				player.setY(player.getY() + 1);
+				repaint();
+			}
+		};
+		graphicsTimer.scheduleAtFixedRate(repaint, 0, 10);
     }
     @Override
     protected void paintComponent(Graphics g) 
