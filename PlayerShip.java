@@ -7,16 +7,16 @@ The class representing the player ship
 
 public class PlayerShip
 {
-    private int mid;
     private int hp;
     private int x; //the player's x coordinate
     private int y; //the player's y coordinate
     private final int l = 96; //the player sprite's length
     private final int h = 108; //the player sprite's height
-    public PlayerShip(int windowLength)
+    public PlayerShip(int windowLength, int windowHeight)
     {
-        mid = (windowLength - l)/2;
-        x = mid;
+        x = (windowLength - l)/2;
+	y = (windowHeight - l)/2;
+	hp = 5;
     }
     public void setX(int value)
     {
@@ -34,4 +34,18 @@ public class PlayerShip
     {
         return y;
     }
+    public void hit() //when the player gets hit
+    {
+	hp--;
+    }
+    public int getL()
+    {
+        return l;
+    }
+    public int getH()
+    {
+        return h;
+    }
+    
 }
+
