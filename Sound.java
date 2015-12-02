@@ -6,10 +6,6 @@ public class Sound {
 	
 	private Clip clip;
 	
-	public static Sound sound1 = new Sound("/dankmusic.wav");
-	public static Sound sound2 = new Sound("/dankmusic.wav");
-	public static Sound sound3 = new Sound("/dankmusic.wav");
-	
 	public Sound (String fileName) {
 		try {
 			AudioInputStream ais = AudioSystem.getAudioInputStream(Sound.class.getResource(fileName));
