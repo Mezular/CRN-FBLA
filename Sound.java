@@ -1,14 +1,16 @@
-package mike.sound;
-
 import javax.sound.sampled.*;
 
 public class Sound {
 	
 	private Clip clip;
 	
+	public static Sound sound1 = new Sound("/dankmusic.wav");
+	public static Sound sound2 = new Sound("/dankmusic.wav");
+	public static Sound sound3 = new Sound("/dankmusic.wav");
+	
 	public Sound (String fileName) {
 		try {
-			AudioInputStream ais = AudioSystem.getAudioInputStream(Sound.class.getResource(fileName));
+			AudioInputStream ais = AudioSystem.getAudioInputStream("GameApp".getClass().getResource(fileName));
 			clip = AudioSystem.getClip();
 			clip.open(ais);
 		} catch (Exception e) {
@@ -60,3 +62,4 @@ public class Sound {
 	public boolean isActive(){
 		return clip.isActive();
 	}
+}
