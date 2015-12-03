@@ -31,14 +31,29 @@ public class GamePanel extends JPanel
 			@Override
 			public void run()
 			{
-				player.setX(player.getX() + direction);
 				repaint();
+			}
+		};
+		TimerTask move = new TimerTask()
+		{
+			@Override
+			public void run()
+			{
+				player.setX(player.getX() + direction);
+				if (player.getX() == 0)
+				{
+					player.setX(1);
+				}
+				else if (player.getX() == 918) //window length - sprite length - 10
+				{
+					player.setX(917);
+				}
 			}
 		};
 		addKeyListener(new KeyAdapter() 
 		{
 			public void keyPressed(KeyEvent e) 
-			{                
+			{
 				if(e.getKeyCode() == KeyEvent.VK_LEFT)
 				{
 					direction = -1;
@@ -47,9 +62,12 @@ public class GamePanel extends JPanel
 				{
 					direction = 1;
 				}
+				else if(e.getKeyCode() == KeyEvent.VK_SPACE)
+				{
+				}
 			}
 			public void keyReleased(KeyEvent e) 
-			{                
+			{
 				if(e.getKeyCode() == KeyEvent.VK_LEFT || e.getKeyCode() == KeyEvent.VK_RIGHT)
 				{
 					direction = 0;
@@ -57,6 +75,7 @@ public class GamePanel extends JPanel
 			}
 		});
 		timer.scheduleAtFixedRate(repaint, 0, 1);
+		timer.scheduleAtFixedRate(move, 0, 3);
     }
     @Override
     protected void paintComponent(Graphics g) 
