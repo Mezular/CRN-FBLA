@@ -41,6 +41,10 @@ public class Boss
     {
         return y;
     }
+    public int getHP()
+    {
+        return hp;
+    }
     public Image getSprite()
     {
         return sprite;
