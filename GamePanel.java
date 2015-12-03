@@ -54,11 +54,11 @@ public class GamePanel extends JPanel
 		{
 			public void keyPressed(KeyEvent e) 
 			{
-				if(e.getKeyCode() == KeyEvent.VK_LEFT)
+				if(e.getKeyCode() == KeyEvent.VK_LEFT || e.getKeyCode() == KeyEvent.VK_A)
 				{
 					direction = -1;
 				}
-				else if(e.getKeyCode() == KeyEvent.VK_RIGHT)
+				else if(e.getKeyCode() == KeyEvent.VK_RIGHT || e.getKeyCode() == KeyEvent.VK_D)
 				{
 					direction = 1;
 				}
@@ -68,7 +68,7 @@ public class GamePanel extends JPanel
 			}
 			public void keyReleased(KeyEvent e) 
 			{
-				if(e.getKeyCode() == KeyEvent.VK_LEFT || e.getKeyCode() == KeyEvent.VK_RIGHT)
+				if (e.getKeyCode() == KeyEvent.VK_LEFT || e.getKeyCode() == KeyEvent.VK_RIGHT)
 				{
 					direction = 0;
 				}
