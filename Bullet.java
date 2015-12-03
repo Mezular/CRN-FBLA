@@ -13,10 +13,11 @@ public class Bullet
     private final int l = 10; //the bullet's length
     private final int h = 10; //the bullet's height
     private boolean visible = true;
-    public Bullet(int startx, int starty)
+    public Bullet(int startx, int starty, String newd)
     {
         x = startx;
 	      y = starty;
+	      direction = newd;
     }
     public void setX(int value)
     {
@@ -38,17 +39,8 @@ public class Bullet
     {
         return visible;
     }
-    public void goaway()
-    {
-      visible = false;
-    }
     public String getDirection()
     {
     	return direction;
-    }
-    public void setDirection(String newd)
-    {
-    	direction = newd;
-    }
     }
 }
