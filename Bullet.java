@@ -7,7 +7,6 @@ The class representing bullets
 
 public class Bullet
 {
-    private int hp;
     private String direction;
     private int x; //the bullet's x coordinate
     private int y; //the bullet's y coordinate
