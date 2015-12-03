@@ -8,6 +8,7 @@ The class representing bullets
 public class Bullet
 {
     private int hp;
+    private String direction;
     private int x; //the bullet's x coordinate
     private int y; //the bullet's y coordinate
     private final int l = 10; //the bullet's length
@@ -41,5 +42,14 @@ public class Bullet
     public void goaway()
     {
       visible = false;
+    }
+    public String getDirection()
+    {
+    	return direction;
+    }
+    public void setDirection(String newd)
+    {
+    	direction = newd;
+    }
     }
 }
