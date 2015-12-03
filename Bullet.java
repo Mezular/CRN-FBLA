@@ -38,10 +38,6 @@ public class Bullet
     {
         return visible;
     }
-    public void goaway()
-    {
-      visible = false;
-    }
     public String getDirection()
     {
     	return direction;
