@@ -16,7 +16,9 @@ public class GameApp
 		danksound.loop();
 		JFrame gameWindow = new JFrame(); //create the game window
 		GamePanel panel = new GamePanel(); //create the game panel
-		gameWindow.setSize(1024, 576);
+		panel.setFocusable(true);
+		panel.requestFocusInWindow();
+		gameWindow.setSize(1024, 768);
 		gameWindow.add(panel, BorderLayout.CENTER);
 		gameWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		gameWindow.setLocationRelativeTo(null); //set the window to appear centered in the screen
