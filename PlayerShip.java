@@ -39,12 +39,21 @@ public class PlayerShip
     {
         return y;
     }
+    public int getHP()
+    {
+        return hp;
+    }
+    public void setHP(int value)
+    {
+    	hp = value;
+    }
+    }
     public Image getSprite()
     {
         return sprite;
     }
-	public void hit() //when the player gets hit
+	public void hit(int dmgtaken) //when the player gets hit
     {
-		hp--;
+		hp-=dmgtaken;
     }
 }
